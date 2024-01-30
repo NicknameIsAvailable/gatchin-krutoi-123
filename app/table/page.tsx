@@ -2,8 +2,11 @@ import { Container, Table, Typography } from '@mui/joy';
 import React from 'react';
 
 const Page = async () => {
+
+    const domain = process.env.DOMAIN
+
     const fetchData = async () => {
-        const response = await fetch("http://localhost:3000/api", {
+        const response = await fetch(`${domain}/api`, {
             method: "GET"
         });
         const data = await response.json()
